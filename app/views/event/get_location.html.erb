@@ -1,0 +1,91 @@
+<body>
+	<script>
+	function getlocation (){
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(storePosition);
+		} else{
+			document.write("El geolocalizador no es soportado por el navigator");
+		} 
+	}
+	function getposition (position){
+		document.write("Latitud:" + position.coords.latitude + "<br>Longitud: " + position.coords.longitude);
+}
+	function storePosition(position){
+        
+        var original_url = window.location.href;
+        var store_url = "store?latitude=" + position.coords.latitude +
+		"&longitude=" + position.coords.longitude;
+        var url = original_url.slice(0,original_url.indexOf("get_location")) + store_url;
+	window.open(url, "_self");
+  
+}
+	window.setInterval(getlocation,1000);
+	</script>
+
+<body class="">
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <%= render "/components/sidebarClientes" %>
+        <!-- End_Sidebar  -->
+        <div class="main-panel">
+
+        <!-- Navbar -->
+        <%= render "/components/navbar" %>
+    <!-- End_Navbar  -->
+            <div class="content">
+                <div class="container-fluid">
+                    
+                  <div class="row">
+
+                    <% while !@location.empty? %>
+                      <% coordinate = @location.pop %>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                          <div class="card card-stats">
+                            <div class="card-header card-header-rose card-header-icon">
+                              <div class="card-icon">
+                                <i class="material-icons">place</i>
+                              </div>
+                            <p class="card-category">Coordenadas <%= coordinate.user %> </p>
+                            <h3 class="card-title">Latitud: <%= coordinate.y %></h3>
+                            <h3 class="card-title">Longitud: <%= coordinate.x %></h3>
+                          </div>
+                          <div class="card-footer">
+                            <div class="stats">
+                              <i class="material-icons">local_offer</i> obtenido por javascript
+                            </div>
+                          </div>
+                        </div>  
+                    </div>
+
+            <% end %>
+
+
+            </div>
+            <!-- Wizard container -->
+
+                <%= render "/components/footer" %>
+
+            <!-- wizard container -->
+        </div>
+    </div>
+</body>
+
+
+<script src="https://demos.creative-tim.com/material-dashboard-pro/assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  //init wizard
+
+  demo.initMaterialWizard();
+
+  // Javascript method's body can be found in assets/js/demos.js
+  demo.initDashboardPageCharts();
+
+  demo.initCharts();
+
+});
+
+</body>

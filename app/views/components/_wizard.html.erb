@@ -1,0 +1,363 @@
+
+                <div class="wizard-container">
+                <div class="card card-wizard" data-color="rose" id="wizardProfile">
+                  <form action="" method="">
+                    <!--        You can switch " data-color="primary" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+                    <div class="card-header text-center">
+                      <h2 class="card-title">
+                        Generador de anuncios
+                      </h2>
+                      <h5 class="card-description">Herramienta para la automatizacion y publicacion de anuncios por redes sociales</h5>
+                    </div>
+                    
+                    <div class="wizard-navigation">
+                      <ul class="nav nav-pills">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#ingresar" data-toggle="tab" role="tab">
+                            Ingresar link
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#verificar" data-toggle="tab" role="tab">
+                              Verificar
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#seleccionar" data-toggle="tab" role="tab">
+                            Seleccionar
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#seleccionar" data-toggle="tab" role="tab">
+                            Formatos
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#configurar" data-toggle="tab" role="tab">
+                            Configurar
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#preview" data-toggle="tab" role="tab">
+                            Preview
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#finalizar" data-toggle="tab" role="tab">
+                            Finalizar
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                      <div class="tab-content">
+
+<!--INGRESAR -->
+
+                        <div class="tab-pane active" id="ingresar">
+
+                        <h5 class="info-text"> Ingresa una pagina a la cual deseas generar anuncios </h5>
+                        <div class="row justify-content-center">
+                          <div class="col-lg-10">
+                            <div class="row">
+                              <div class="col-sm-4">
+                                <div class="choice" data-toggle="wizard-checkbox">
+                                  <input type="checkbox" name="jobb" value="link">
+                                  <div class="icon">
+                                    <i class="fa fa-link"></i>
+                                  </div>
+                                  <h6>Link</h6>
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                  <div class="form-group">
+                                  <label for="exampleInput11" class="bmd-label-floating">URL</label>
+                                  <!--
+                                  <input type="text" class="form-control" id="exampleInput11" name="lastname" required>
+                                  -->
+                                  <%= form_tag generator_path, method: :post do %>
+                                      <%= url_field_tag :url, "", class: 'form-control' %>
+                                      <br>
+                                      <%= submit_tag "Ingresar"   , class: "btn btn-fill btn-rose", href: 'verificar' %>
+                                   <% end %>
+                                  </div>
+
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+
+<!--VERIFICAR -->
+
+                        <div class="tab-pane" id="verificar">
+
+                        <div style="width:100%;height:700px;overflow:hidden;">
+                                    <center><%= link_to('Obtener Imagenes', scraping_path(url: @url_cliente),  target: "_blank", :class=>'btn btn-primary') %></center>
+                                    <br>
+                                    <iframe src="<%= @url_cliente %>" height="600px" width="99%" name="iframe_a"></iframe>
+                        </div>
+
+                        </div>
+                        
+
+<!--SELECCIONAR -->
+
+                        <div class="tab-pane" id="seleccionar">
+                            <% if @url_cliente.blank? %>
+                            <a>Hola</a>
+                            <% else %>
+                              <div style="width:100%;height:700px;overflow:hidden;">
+                                      <iframe src="<%= scraping_path(url: @url_cliente) %>" height="600px" width="99%" name="iframe_a"></iframe>
+                                      </div>
+                            <% end %>
+                        </div>
+
+<!--CONFIGURAR -->
+                        <div class="tab-pane" id="configurar">
+
+                          <div class="card-header text-center">
+                            <h3 class="card-title">
+                              Imagenes seleccionadas
+                            </h3>
+                            <h5 class="card-description">Estas son las imagenes que escogiste verifica si son las adecuadas para que hagas una buena configuracion.</h5>
+                          </div>
+
+                        <div class="row">
+
+                              <div class="col-md-4">
+                              <div class="card card-product">
+                                  <div class="card-header card-header-image" data-header-animation="false">
+                                      <a href="#pablo">
+                                          <!--<img class="img" src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/card-2.jpg">-->
+                                          <img class="img" src="/assets/Scraping/5b07054c0bf479.95367024_bannercuarto-pagweb-1423x635-0e96b560ccd82b3ca0571b6fe572eab34a5e2a11cb4b19dbc847c278d4ad8091.png" alt="5b07054c0bf479.95367024 bannercuarto pagweb 1423x635" />
+                                      </a>
+                                  </div>
+                                  <div class="card-body">
+                                      <div class="card-actions text-center">
+                                        
+                                          
+                                          </div>
+                                      <h4 class="card-title">
+                                          <a href="#pablo"></a>
+                                      </h4>
+                                      <div class="card-description">
+                  
+                  
+                  
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>   
+                          
+                          
+                          <div class="col-md-4">
+                          <div class="card card-product">
+                              <div class="card-header card-header-image" data-header-animation="false">
+                                  <a href="#pablo">
+                                      <!--<img class="img" src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/card-2.jpg">-->
+                                      <img class="img" src="/assets/Scraping/5b07054c0bf479.95367024_bannercuarto-pagweb-1423x635-0e96b560ccd82b3ca0571b6fe572eab34a5e2a11cb4b19dbc847c278d4ad8091.png" alt="5b07054c0bf479.95367024 bannercuarto pagweb 1423x635" />
+                                  </a>
+                              </div>
+                              <div class="card-body">
+                                  <div class="card-actions text-center">
+                                     
+                                      
+                                      </div>
+                                  <h4 class="card-title">
+                                      <a href="#pablo"></a>
+                                  </h4>
+                                  <div class="card-description">
+              
+              
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="col-md-4">
+                      <div class="card card-product">
+                          <div class="card-header card-header-image" data-header-animation="false">
+                              <a href="#pablo">
+                                  <!--<img class="img" src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/card-2.jpg">-->
+                                  <img class="img" src="/assets/Scraping/5b07054c0bf479.95367024_bannercuarto-pagweb-1423x635-0e96b560ccd82b3ca0571b6fe572eab34a5e2a11cb4b19dbc847c278d4ad8091.png" alt="5b07054c0bf479.95367024 bannercuarto pagweb 1423x635" />
+                              </a>
+                          </div>
+                          <div class="card-body">
+                              <div class="card-actions text-center">
+                                 
+                                  
+                                  </div>
+                              <h4 class="card-title">
+                                  <a href="#pablo"></a>
+                              </h4>
+                              <div class="card-description">
+          
+          
+          
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                        </div>
+                        
+                        <div class="card-header text-center">
+                            <h3 class="card-title">
+                                    Configuracion de Conjuntos de anuncios
+                            </h3>
+                            <h5 class="card-description">Estas son las imagenes que escogiste verifica si son las adecuadas para que hagas una buena configuracion.</h5>
+                          </div>
+
+
+                          <div class="row">
+
+                            <!--Form 1 -->
+                            <div class="col-md-4">
+                              <div class="card ">
+                                  <div class="card-header card-header-primary card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">looks_one</i>
+                                    </div>
+                                      <h4 class="card-title">Conjunto de Anuncios<strong> 1 </strong></h4>
+                                  </div>
+                                  <div class="card-body ">             
+                                    <form method="#" action="#">
+                                      <div class="form-group">
+                                        <label for="exampleEmail" class="bmd-label-floating">Email Address</label>
+                                        <input type="email" class="form-control" id="exampleEmail">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="examplePass" class="bmd-label-floating">Password</label>
+                                        <input type="email" class="form-control" id="examplePass">
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="examplePass" class="bmd-label-floating">Password</label>
+                                        <input type="email" class="form-control" id="examplePass">
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="card-footer ">
+                                      <button type="submit" class="btn btn-fill btn-primary">Submit</button>
+                                  </div>
+                              </div>
+                            </div>
+                            <!--Form 1 -->
+
+                            <!--Form 2 -->
+                            <div class="col-md-4">
+                              <div class="card ">
+                                  <div class="card-header card-header-warning card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">looks_two</i>
+                                    </div>
+                                      <h4 class="card-title">Conjunto de Anuncios <strong> 2 </strong></h4>
+                                  </div>
+                                  <div class="card-body ">             
+                                    <form method="#" action="#">
+                                      <div class="form-group">
+                                        <label for="exampleEmail" class="bmd-label-floating">Email Address</label>
+                                        <input type="email" class="form-control" id="exampleEmail">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="examplePass" class="bmd-label-floating">Password</label>
+                                        <input type="email" class="form-control" id="examplePass">
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="examplePass" class="bmd-label-floating">Password</label>
+                                        <input type="email" class="form-control" id="examplePass">
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="card-footer ">
+                                      <button type="submit" class="btn btn-fill btn-warning">Submit</button>
+                                  </div>
+                              </div>
+                            </div>
+                            <!--Form 2 -->
+
+
+                            <!--Form 3 -->
+                            <div class="col-md-4">
+                              <div class="card ">
+                                  <div class="card-header card-header-info card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">looks_three</i>
+                                    </div>
+                                      <h4 class="card-title">Conjunto de Anuncios <strong> 3 </strong></h4>
+                                  </div>
+                                  <div class="card-body ">             
+                                    <form method="#" action="#">
+                                      <div class="form-group">
+                                        <label for="exampleEmail" class="bmd-label-floating">Email Address</label>
+                                        <input type="email" class="form-control" id="exampleEmail">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="examplePass" class="bmd-label-floating">Password</label>
+                                        <input type="email" class="form-control" id="examplePass">
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="examplePass" class="bmd-label-floating">Password</label>
+                                        <input type="email" class="form-control" id="examplePass">
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="card-footer ">
+                                      <button type="submit" class="btn btn-fill btn-info">Submit</button>
+                                  </div>
+                              </div>
+                            </div>
+                            <!--Form 3 -->
+
+
+
+                          </div>
+
+                        </div>
+
+<!--PREVIEW -->
+
+                        <div class="tab-pane" id="preview">
+
+                        </div>
+
+<!--FINALIZAR -->
+
+                        <div class="tab-pane" id="finalizar">
+
+                          <div class="col-md-6 ml-auto mr-auto">
+                            <div class="card card-testimonial">
+                          <div class="icon">
+                            <i class="material-icons">done</i>
+                          </div>
+                          <div class="card-body">
+                            <h2 class="card-description">
+                              La publicidad ha sido generada con exito
+                            </h2>
+                          </div>
+
+                          <div class="card-footer">
+                            <h4 class="card-title">HAPI Project</h4>
+                            <div class="card-avatar">
+                              <a href="#pablo">
+                                <img class="img" src="https://image.ibb.co/kfjXCd/HAPI_1.jpg" />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+
+                        </div>
+
+
+
+
+
+                  </form>
+                </div>
+              </div>

@@ -1,0 +1,132 @@
+<% if usuario_signed_in? %>
+
+  <body class="">
+    <div class="wrapper">
+        <!-- Sidebar -->
+            <%= render "/components/sidebarHome" %>
+        <!-- End_Sidebar  -->
+        <div class="main-panel">
+            <!-- Navbar -->
+                <%= render "/components/navbar" %>
+            <!-- End_Navbar  -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="col-md-12">
+
+                        <div class="card card-signup">
+                        <br>
+                          <h1 class="card-title text-center">Bienvenido a HAPI</h1>
+                        <div class="card-body">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+                <%= render "/components/footer" %>                         
+            <!-- Footer -->
+          </div>
+      </div>
+  </body>
+
+
+<% else %>
+
+<body class="off-canvas-sidebar register-page">
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-primary navbar-transparent navbar-absolute" color-on-scroll="500">
+	<div class="container">
+    <div class="navbar-wrapper">
+	        <a class="navbar-brand" href="#pablo">TET Project 1</a>
+		</div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="navbar-toggler-icon icon-bar"></span>
+      <span class="navbar-toggler-icon icon-bar"></span>
+      <span class="navbar-toggler-icon icon-bar"></span>
+    </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar">
+            <ul class="navbar-nav">
+
+                    <li class="nav-item active">
+                    <a href="/usuarios/sign_in" class="nav-link">
+                        <i class="material-icons">fingerprint</i>
+                        Ingresar
+                    </a>
+                </li>
+                <li class= "nav-item">
+                    <a href="/usuarios/sign_up" class="nav-link">
+                        <i class="material-icons">person_add</i>
+                        Registrate
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</nav>
+<!-- End Navbar -->
+
+
+    <div class="wrapper wrapper-full-page">
+        <div class="page-header register-page header-filter" filter-color="white" style="background-image: url('https://images.pexels.com/photos/919188/pexels-photo-919188.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-size: cover; background-position: top center;">
+  <div class="container">
+            <div class="row">
+                <div class="col-md-10 ml-auto mr-auto">
+                    <div class="card card-signup">
+                        <h2 class="card-title text-center">Ingresar</h2>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-10 ml-auto">
+                                    <div class="info info-horizontal">
+                                        <div class="icon icon-rose">
+                                            <i class="material-icons">timeline</i>
+                                        </div>
+                                        <div class="description">
+                                            <h3 class="info-title">Rapidez</h3>
+                                            <p class="description">
+                                                Con HAPI no gastaras tanto tiempo a la hora de publicar ads a traves de las redes sociales.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info info-horizontal">
+                                        <div class="icon icon-primary">
+                                            <i class="material-icons">code</i>
+                                        </div>
+                                        <div class="description">
+                                            <h3 class="info-title">Automatizacion</h3>
+                                            <p class="description">
+                                                Usando HAPI no deberas digitar tanta informacion, aprovecha y publica ads facilmente solo a unos clicks.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info info-horizontal">
+                                        <div class="icon icon-info">
+                                            <i class="material-icons">group</i>
+                                        </div>
+                                        <div class="description">
+                                            <h3 class="info-title">Publico Objetivo</h3>
+                                            <p class="description">
+                                                Lleva los productos de tus clientes a un mercado digital asi ayudaras a subir la productivdad de la empresa.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%= render "/components/footerII" %> 
+
+</div>
+
+    </div>
+
+</body>
+
+
+<% end %>
+
+

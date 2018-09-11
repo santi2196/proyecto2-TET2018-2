@@ -1,0 +1,58 @@
+
+
+
+<body class="">
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <%= render "/components/sidebarGenerador" %>
+        <!-- End_Sidebar  -->
+        <div class="main-panel">
+
+        <!-- Navbar -->
+        <%= render "/components/navbar" %>
+    <!-- End_Navbar  -->
+            <div class="content">
+                <div class="container-fluid">
+                    
+                  <div class="row">
+
+					<%= form_tag("/event/map", method: "get") do %>
+					<%= label_tag(:starting, "Starting Date") %>
+					<%= datetime_local_field(:starting, :date_1) %>
+					<%= label_tag(:ending, "Ending Date") %>
+					<%= datetime_local_field(:ending, :date_2) %>
+					<%= submit_tag("Next") %>
+				 </div>
+
+            <% end %>
+
+
+            </div>
+            <!-- Wizard container -->
+
+                <%= render "/components/footer" %>
+
+            <!-- wizard container -->
+        </div>
+    </div>
+</body>
+
+
+<script src="https://demos.creative-tim.com/material-dashboard-pro/assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  //init wizard
+
+  demo.initMaterialWizard();
+
+  // Javascript method's body can be found in assets/js/demos.js
+  demo.initDashboardPageCharts();
+
+  demo.initCharts();
+
+});
+
+</body>

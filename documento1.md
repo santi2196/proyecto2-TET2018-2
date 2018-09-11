@@ -40,10 +40,10 @@ DCA: [ivargas.dis.eafit.edu.co](ivargas1.dis.eafit.edu.co "Aplicacion desplegada
 
 Para la solucion del proyecto 1 la APP fue desplegada en el DCA y en una instancia de AWS. Para desplegarla en estos distintos servidores se configuraron las maquinas virtuales con el S.O. Centos 7 y fue ejecutada usando Docker y Docker-compose. Se desplegó con 3 contenedores conectados entre si, uno para la aplicacion(Ruby On Rails) otro para la base de datos (Postgres) y el ultimo para un servidor Web (Nginx). Las vistas de esta aplicacion estan contruidas utilizadon Bootstrap.
 
-##5. Marco-referencia-v1
+## 5. Marco-referencia-v1
 
 
-###Disponibilidad (Confiabilidad y Recuperación)
+### Disponibilidad (Confiabilidad y Recuperación)
 
 En general, el principal objetivo del QA de disponibilidad se resume a Permitir soportar las fallas del sistema de tal manera que el servicio entregado por dicho sistema siga siendo compatible con su especificación. Esto implica entender que una falla solo representa una amenaza cuando este fenómeno afecta tanto a los servicios del sistema, que las especificaciones del sistema ya no se cumplen. La literatura propone estrategias y tácticas que garantizan la disponibilidad desde los siguientes tres frentes:
 
@@ -62,7 +62,7 @@ En general, el principal objetivo del QA de disponibilidad se resume a Permitir 
   
 **[Ver más](https://www.semanticscholar.org/paper/Realizing-and-Refining-Architectural-Tactics-%3A-Scott/5840ae598740c6dbfb69dc3ce30f43efa23ef9b9) [Tácticas de arquitetura: Disponibilidad](https://profesores.virtual.uniandes.edu.co/~isis2503/dokuwiki/lib/exe/fetch.php?media=principal:modulo10-disponibilidad.pdf)**
 
-###Rendimiento
+### Rendimiento
 El rendimiento puede ser definido como la efectividad total de un sistema. Puede ser medido de diferentes maneras pero las más comunes incluyen el throughput, definido como cuántas unidades de información puede procesar el sistema en un determinado tiempo, y el tiempo de respuesta. El rendimiento depende de muchas variables desde cómo está codificado el sistema hasta la infraestructura que lo soporta. Por lo general es un atributo muy importante y debe ser considerado desde las fases iniciales de diseño de una solución. Existen varias maneras de lograr un buen rendimiento:
 
 - Entrega y carga optimizada de los assets estáticos.

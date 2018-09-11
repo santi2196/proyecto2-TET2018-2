@@ -25,7 +25,7 @@ El programa usa un sistema de localizacion que permite por medio de una API de G
 - El sistema debe poder almacenar en BD la ubicacion geografica de un usuario 		      cuando usa una sesion en especifica.
 - El sistema debe poder mostrar las ubicaciones de un usuario que fueron almacenadas en BD y poder dar un rango de tiempo para visualizar esta informacion.
 
-## 2. Detalles técnicos del diseño e implementación funcional para el proyecto 2.
+## 2. Detalles técnicos del diseño e implementación funcional para el proyecto
 ---
 
 La aplicacion se desarrollara con el popular frameworkweb Ruby On Rails. Dicha aplicacion estara encapsulada en un contenedor docker, el cual se encontrara contiguo a otros dos contenedores, quienes contendran la base de datos y nginx (Proxy inverso). La orquestacion de dichos contenedores sera dirigida por Kubernetes para permitir que la aplicacion sea escalable.
